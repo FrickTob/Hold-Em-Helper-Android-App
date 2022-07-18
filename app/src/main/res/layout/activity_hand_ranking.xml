@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/rankingScrollView"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MyPokerAssistantActivities.HandRankingActivity">
+
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/rankingTitle"
+            android:textAlignment="textEnd"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/royalFlushText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/rankingRoyalFlush"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Title" />
+
+        <ImageView
+            android:id="@+id/royalFlushImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingRoyalFlush"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/royalFlushText"
+            app:srcCompat="@drawable/royalflush" />
+
+        <TextView
+            android:id="@+id/straightFlushText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingStraightFlush"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/royalFlushImage" />
+
+        <ImageView
+            android:id="@+id/straightFlushImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingStraightFlushImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/straightFlushText"
+            app:srcCompat="@drawable/straightflush" />
+
+        <TextView
+            android:id="@+id/fourOfAKindText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingFourOfAKind"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/straightFlushImage" />
+
+        <ImageView
+            android:id="@+id/fourOfAKindImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingFourOfAKindImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourOfAKindText"
+            app:srcCompat="@drawable/fourofakind" />
+
+        <TextView
+            android:id="@+id/fullHouseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingFullHouse"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourOfAKindImage" />
+
+        <ImageView
+            android:id="@+id/fullHouseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingFullHouseImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullHouseText"
+            app:srcCompat="@drawable/fullhouse" />
+
+        <TextView
+            android:id="@+id/flushText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingFlush"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullHouseImage" />
+
+        <ImageView
+            android:id="@+id/flushImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingFlushImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flushText"
+            app:srcCompat="@drawable/flush" />
+
+        <TextView
+            android:id="@+id/straightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingStraight"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flushImage" />
+
+        <ImageView
+            android:id="@+id/straightImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingStraightImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/straightText"
+            app:srcCompat="@drawable/straight_" />
+
+        <TextView
+            android:id="@+id/threeOfAKindText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingThreeOfAKind"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/straightImage" />
+
+        <ImageView
+            android:id="@+id/threeOfAKindImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingThreeOfAKindImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/threeOfAKindText"
+            app:srcCompat="@drawable/threeofakind" />
+
+        <TextView
+            android:id="@+id/twoPairText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingTwoPair"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/threeOfAKindImage" />
+
+        <ImageView
+            android:id="@+id/twoPairImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingTwoPairImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twoPairText"
+            app:srcCompat="@drawable/twopair" />
+
+        <TextView
+            android:id="@+id/onePairText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingOnePair"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/twoPairImage" />
+
+        <ImageView
+            android:id="@+id/onePairImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingOnePairImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/onePairText"
+            app:srcCompat="@drawable/onepair" />
+
+        <TextView
+            android:id="@+id/highCardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rankingHighCard"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/onePairImage" />
+
+        <ImageView
+            android:id="@+id/highCardImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/rankingHighCardImageContentDescription"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="W, 5:1.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/highCardText"
+            app:srcCompat="@drawable/highcard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

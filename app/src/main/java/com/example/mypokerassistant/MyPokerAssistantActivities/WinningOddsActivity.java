@@ -1,0 +1,73 @@
+package com.example.mypokerassistant.MyPokerAssistantActivities;
+
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mypokerassistant.PokerStats.Stats2Player;
+import com.example.mypokerassistant.R;
+
+public class WinningOddsActivity extends AppCompatActivity {
+
+
+    //Pop-Up window pieces for Help Button
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+    private TextView helpPopUpTitle;
+    private ImageButton closeButton;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_winning_odds);
+
+        // Click listener for Get Odds Button
+        final Button oddsButton = findViewById(R.id.getOddsButton);
+        oddsButton.setOnClickListener(this::getOddsButtonPress);
+
+        final ImageButton helpButton = findViewById(R.id.oddsHelpButton);
+        helpButton.setOnClickListener(view -> createHelpPopUp());
+    }
+
+    public void getOddsButtonPress(View view) {
+        TextView outputMessage = findViewById(R.id.oddsOutput);
+        EditText hand = findViewById(R.id.handInput);
+        EditText tableCards = findViewById(R.id.tableInput);
+
+        String handText = hand.getText().toString();
+
+        if(handText.length() != 4) {
+            outputMessage.setText(getString(R.string.oddsInvalidInput));
+        }
+        String tableCardsText = tableCards.getText().toString();
+
+        String cardString = handText + tableCardsText;
+
+        Stats2Player stats = new Stats2Player();
+        float odds = stats.getOdds(cardString);
+
+        outputMessage.setText(String.format(getString(R.string.oddsOutputMessage), odds));
+    }
+
+    public void createHelpPopUp() {
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View helpPopUpView = getLayoutInflater().inflate(R.layout.odds_help_popup, null);
+        helpPopUpTitle = helpPopUpView.findViewById(R.id.oddsPopUpTitle);
+        closeButton = helpPopUpView.findViewById(R.id.helpPopUpCloseButton);
+
+        dialogBuilder.setView(helpPopUpView);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        closeButton.setOnClickListener(view -> dialog.dismiss());
+
+    }
+
+}
