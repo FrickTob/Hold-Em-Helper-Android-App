@@ -15,21 +15,10 @@ public class PokerHand {
 	public PokerHand(PokerCard card1, PokerCard card2) {
 		this.card1 = card1;
 		this.card2 = card2;
+
 	}
-	
-	public PokerHand() {
-		card1 = null;
-		card2 = null;
-	}
-	
-	public void addCard(PokerCard card) {
-		if(card1 == null)
-			card1 = card;
-		else if(card2 == null)
-			card2 = card;
-		else
-			System.out.println("Can't add card. Hand is already full.");
-	}
+
+
 
 	
 	public PokerCard getCard1() {
@@ -38,6 +27,7 @@ public class PokerHand {
 	public PokerCard getCard2() {
 		return card2;
 	}
+
 	public void printHand() {
 		System.out.println(card1.getCard() + card2.getCard());
 	}

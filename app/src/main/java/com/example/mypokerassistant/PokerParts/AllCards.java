@@ -13,64 +13,60 @@ public class AllCards {
 
 	public static final ArrayList<PokerCard> ALLCARDS = new ArrayList<PokerCard>()
 
-	{/**
-		 * 
-		 */
-		private static final long serialVersionUID = -6755712440735351017L;
-
 	{
-		add(new PokerCard('2','C')); // 0
-		add(new PokerCard('3','C')); // 1
-		add(new PokerCard('4','C')); // 2
-		add(new PokerCard('5','C')); // 3
-		add(new PokerCard('6','C')); // 4
-		add(new PokerCard('7','C')); // 5
-		add(new PokerCard('8','C')); // 6
-		add(new PokerCard('9','C')); // 7
-		add(new PokerCard('0','C')); // 8
-		add(new PokerCard('J','C')); // 9
-		add(new PokerCard('Q','C')); // 10
-		add(new PokerCard('K','C')); // 11
-		add(new PokerCard('A','C')); // 12
-		add(new PokerCard('2','D')); // 13
-		add(new PokerCard('3','D')); // 14
-		add(new PokerCard('4','D')); // 15
-		add(new PokerCard('5','D')); // 16
-		add(new PokerCard('6','D')); // 17
-		add(new PokerCard('7','D')); // 18
-		add(new PokerCard('8','D')); // 19
-		add(new PokerCard('9','D')); // 20
-		add(new PokerCard('0','D')); // 21
-		add(new PokerCard('J','D')); // 22
-		add(new PokerCard('Q','D')); // 23
-		add(new PokerCard('K','D')); // 24
-		add(new PokerCard('A','D')); // 25
-		add(new PokerCard('2','H')); // 26
-		add(new PokerCard('3','H')); // 27
-		add(new PokerCard('4','H')); // 28
-		add(new PokerCard('5','H')); // 29
-		add(new PokerCard('6','H')); // 30
-		add(new PokerCard('7','H')); // 31
-		add(new PokerCard('8','H')); // 32
-		add(new PokerCard('9','H')); // 33
-		add(new PokerCard('0','H')); // 34
-		add(new PokerCard('J','H')); // 35
-		add(new PokerCard('Q','H')); // 36
-		add(new PokerCard('K','H')); // 37
-		add(new PokerCard('A','H')); // 38
-		add(new PokerCard('2','S')); // 39
-		add(new PokerCard('3','S')); // 40
-		add(new PokerCard('4','S')); // 41
-		add(new PokerCard('5','S')); // 42
-		add(new PokerCard('6','S')); // 43
-		add(new PokerCard('7','S')); // 44
-		add(new PokerCard('8','S')); // 45
-		add(new PokerCard('9','S')); // 46
-		add(new PokerCard('0','S')); // 47
-		add(new PokerCard('J','S')); // 48
-		add(new PokerCard('Q','S')); // 49
-		add(new PokerCard('K','S')); // 50
-		add(new PokerCard('A','S')); // 51
+		{
+			add(new PokerCard('2','C')); // 0
+			add(new PokerCard('3','C')); // 1
+			add(new PokerCard('4','C')); // 2
+			add(new PokerCard('5','C')); // 3
+			add(new PokerCard('6','C')); // 4
+			add(new PokerCard('7','C')); // 5
+			add(new PokerCard('8','C')); // 6
+			add(new PokerCard('9','C')); // 7
+			add(new PokerCard('0','C')); // 8
+			add(new PokerCard('J','C')); // 9
+			add(new PokerCard('Q','C')); // 10
+			add(new PokerCard('K','C')); // 11
+			add(new PokerCard('A','C')); // 12
+			add(new PokerCard('2','D')); // 13
+			add(new PokerCard('3','D')); // 14
+			add(new PokerCard('4','D')); // 15
+			add(new PokerCard('5','D')); // 16
+			add(new PokerCard('6','D')); // 17
+			add(new PokerCard('7','D')); // 18
+			add(new PokerCard('8','D')); // 19
+			add(new PokerCard('9','D')); // 20
+			add(new PokerCard('0','D')); // 21
+			add(new PokerCard('J','D')); // 22
+			add(new PokerCard('Q','D')); // 23
+			add(new PokerCard('K','D')); // 24
+			add(new PokerCard('A','D')); // 25
+			add(new PokerCard('2','H')); // 26
+			add(new PokerCard('3','H')); // 27
+			add(new PokerCard('4','H')); // 28
+			add(new PokerCard('5','H')); // 29
+			add(new PokerCard('6','H')); // 30
+			add(new PokerCard('7','H')); // 31
+			add(new PokerCard('8','H')); // 32
+			add(new PokerCard('9','H')); // 33
+			add(new PokerCard('0','H')); // 34
+			add(new PokerCard('J','H')); // 35
+			add(new PokerCard('Q','H')); // 36
+			add(new PokerCard('K','H')); // 37
+			add(new PokerCard('A','H')); // 38
+			add(new PokerCard('2','S')); // 39
+			add(new PokerCard('3','S')); // 40
+			add(new PokerCard('4','S')); // 41
+			add(new PokerCard('5','S')); // 42
+			add(new PokerCard('6','S')); // 43
+			add(new PokerCard('7','S')); // 44
+			add(new PokerCard('8','S')); // 45
+			add(new PokerCard('9','S')); // 46
+			add(new PokerCard('0','S')); // 47
+			add(new PokerCard('J','S')); // 48
+			add(new PokerCard('Q','S')); // 49
+			add(new PokerCard('K','S')); // 50
+			add(new PokerCard('A','S')); // 51
 	}};
 	
 	public static PokerCard getCard(char value, char suit) {

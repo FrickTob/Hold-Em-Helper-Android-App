@@ -1,11 +1,14 @@
 <resources>
-    <string name="app_name">Heads Up Poker Stats</string>
-    <string name="edit_message">Enter a Message</string>
-    <string name="button_send">Send</string>
+    <!-- MISC Strings -->
+    <string name="app_name">My Poker Assistant</string>
+
+    <!-- Main Activity Strings -->
     <string name="handRankingButtonMessage">Hand Ranking</string>
     <string name="winningOddsButtonMessage">Winning Odds</string>
     <string name="handGuideButtonMessage">Hand Guide</string>
     <string name="infoButtonContent">More Info</string>
+
+    <!-- Winning Odds Activity Strings -->
     <string name="oddsHandCard1">Hand Card 1</string>
     <string name="oddsHandCard2">Hand Card 2</string>
     <string name="oddsTableCard1">Table Card 1</string>
@@ -20,6 +23,13 @@
     <string name="oddsTableUserInput">Table Input</string>
     <string name="oddsHandHint">Enter Hand</string>
     <string name="oddsTableHint">Enter Table Cards</string>
+    <string name="oddsInvalidInput">Invalid Input: Press Button Near Top For Help</string>
+    <string name="oddsOutputMessage">%.3f</string>
+    <string name="oddsHelpButtonContentDescription">Press For Help</string>
+    <string name="oddsPopUpCloseButtonContentDescription">Press to Close</string>
+    <string name="oddsPleaseWaitMessage">Calculating odds...</string>
+
+    <!-- Hand Ranking Activity Strings -->
     <string name="rankingTitle">Poker Hand Rankings</string>
     <string name="rankingRoyalFlush">1. Royal Flush</string>
     <string name="rankingStraightFlush">2. Straight Flush</string>
@@ -42,9 +52,5 @@
     <string name="rankingTwoPairImageContentDescription">7 of Hearts, 7 of Spades, 9 of Diamonds, 9 of Clubs, 4 of Spades</string>
     <string name="rankingOnePairImageContentDescription">Ace of Spades, Ace of Hearts, 6 of Spades, 4 of Diamonds, 2 of Hearts</string>
     <string name="rankingHighCardImageContentDescription">King of Clubs, 8 of Spades, 6 of Diamonds, 5 of Diamonds, 3 of Clubs</string>
-    <string name="oddsInvalidInput">Invalid Input: Press Button Near Top For Help</string>
-    <string name="oddsOutputMessage">%.3f</string>
-    <string name="oddsHelpButtonContentDescription">Press For Help</string>
-    <string name="oddsPopUpCloseButtonContentDescription">Press to Close</string>
 
 </resources>

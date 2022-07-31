@@ -16,11 +16,7 @@ import com.example.mypokerassistant.R;
 public class WinningOddsActivity extends AppCompatActivity {
 
 
-    //Pop-Up window pieces for Help Button
-    private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
-    private TextView helpPopUpTitle;
-    private ImageButton closeButton;
+
 
 
     @Override
@@ -40,23 +36,30 @@ public class WinningOddsActivity extends AppCompatActivity {
         TextView outputMessage = findViewById(R.id.oddsOutput);
         EditText hand = findViewById(R.id.handInput);
         EditText tableCards = findViewById(R.id.tableInput);
+        Stats2Player stats = new Stats2Player();
 
         String handText = hand.getText().toString();
+        String tableCardsText = tableCards.getText().toString();
+        String cardString = handText + tableCardsText;
 
         if(handText.length() != 4) {
             outputMessage.setText(getString(R.string.oddsInvalidInput));
+            return;
         }
-        String tableCardsText = tableCards.getText().toString();
 
-        String cardString = handText + tableCardsText;
+        outputMessage.setText(R.string.oddsPleaseWaitMessage);
 
-        Stats2Player stats = new Stats2Player();
         float odds = stats.getOdds(cardString);
 
         outputMessage.setText(String.format(getString(R.string.oddsOutputMessage), odds));
     }
 
     public void createHelpPopUp() {
+        AlertDialog.Builder dialogBuilder;
+        AlertDialog dialog;
+        TextView helpPopUpTitle;
+        ImageButton closeButton;
+
         dialogBuilder = new AlertDialog.Builder(this);
         final View helpPopUpView = getLayoutInflater().inflate(R.layout.odds_help_popup, null);
         helpPopUpTitle = helpPopUpView.findViewById(R.id.oddsPopUpTitle);
