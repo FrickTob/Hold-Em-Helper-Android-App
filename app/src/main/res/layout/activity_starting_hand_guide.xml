@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MyPokerAssistantActivities.HandGuideActivity">
+        tools:context=".MyPokerAssistantActivities.StartingHandGuideActivity">
 
         <EditText
             android:id="@+id/handGuideInputText"
@@ -18,6 +18,7 @@
             android:layout_height="70dp"
             android:layout_marginTop="64dp"
             android:ems="10"
+            android:autofillHints="Poker String"
             android:hint="@string/rankingUserInputHint"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +47,27 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/handGuideOutputText"
+            android:id="@+id/handGuideWinPCTText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/handGuideRankText" />
+
+        <TextView
+            android:id="@+id/handGuideRankText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/handGuideRankButton" />
+
+        <TextView
+            android:id="@+id/handGuideDetailedOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -54,6 +75,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/handGuideRankButton" />
+            app:layout_constraintTop_toBottomOf="@+id/handGuideWinPCTText" />
+
+        <ImageButton
+            android:id="@+id/handGuideInfoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/infoButtonContent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/handGuideDetailedOutput"
+            app:srcCompat="@android:drawable/ic_menu_help" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

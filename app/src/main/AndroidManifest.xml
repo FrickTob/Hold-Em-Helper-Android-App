@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MyPokerAssistant"
         tools:targetApi="31">
         <activity
-            android:name="com.example.mypokerassistant.MyPokerAssistantActivities.HandGuideActivity"
+            android:name="com.example.mypokerassistant.MyPokerAssistantActivities.StartingHandGuideActivity"
             android:parentActivityName="com.example.mypokerassistant.MyPokerAssistantActivities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

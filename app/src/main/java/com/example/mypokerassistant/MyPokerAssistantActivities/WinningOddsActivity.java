@@ -57,12 +57,10 @@ public class WinningOddsActivity extends AppCompatActivity {
     public void createHelpPopUp() {
         AlertDialog.Builder dialogBuilder;
         AlertDialog dialog;
-        TextView helpPopUpTitle;
         ImageButton closeButton;
 
         dialogBuilder = new AlertDialog.Builder(this);
-        final View helpPopUpView = getLayoutInflater().inflate(R.layout.odds_help_popup, null);
-        helpPopUpTitle = helpPopUpView.findViewById(R.id.oddsPopUpTitle);
+        final View helpPopUpView = getLayoutInflater().inflate(R.layout.popup_winning_odds, null);
         closeButton = helpPopUpView.findViewById(R.id.helpPopUpCloseButton);
 
         dialogBuilder.setView(helpPopUpView);

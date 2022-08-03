@@ -27,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ConstraintLayout constraintLayout = findViewById(R.id.mainLayout);
         constraintLayout.setBackgroundColor(Color.WHITE);
+
+        // Click listener for info pop up
         ImageButton infoButton = findViewById(R.id.infoButton);
         infoButton.setOnClickListener(view -> createInfoPopUp());
-
-
-        //Set up info pop up
 
         //Set up click listeners for buttons to send user to different activities
         final Button handRankingButton = findViewById(R.id.handRankingButton);
@@ -44,9 +43,10 @@ public class MainActivity extends AppCompatActivity {
         handGuideButton.setOnClickListener(this::goToHandGuideActivity);
     }
 
+    // Set up Info Pop Up
     public void createInfoPopUp() {
         dialogBuilder = new AlertDialog.Builder(this);
-        final View helpPopUpView = getLayoutInflater().inflate(R.layout.main_activity_info_popup, null);
+        final View helpPopUpView = getLayoutInflater().inflate(R.layout.popup_main_activity_info, null);
         infoPopUpTitle = helpPopUpView.findViewById(R.id.mainInfoTitle);
         mainInfoCloseButton = helpPopUpView.findViewById(R.id.mainInfoCloseButton);
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToHandGuideActivity(View view) {
-        Intent intent = new Intent(this, HandGuideActivity.class);
+        Intent intent = new Intent(this, StartingHandGuideActivity.class);
         startActivity(intent);
     }
 

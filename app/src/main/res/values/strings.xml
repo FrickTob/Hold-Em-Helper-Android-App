@@ -5,8 +5,9 @@
     <!-- Main Activity Strings -->
     <string name="handRankingButtonMessage">Hand Ranking</string>
     <string name="winningOddsButtonMessage">Winning Odds</string>
-    <string name="handGuideButtonMessage">Hand Guide</string>
+    <string name="handGuideButtonMessage">Starting Hands Guide</string>
     <string name="infoButtonContent">More Info</string>
+    <string name="logoContentDescription">Poker Logo</string>
 
     <!-- Hand Ranking Activity Strings -->
     <string name="rankingTitle">Poker Hand Rankings</string>
@@ -55,8 +56,12 @@
     <string name="oddsPleaseWaitMessage">Calculating odds&#8230;</string>
 
     <!-- Hand Ranking Activity Strings -->
-    <string name="rankingTitleText">Starting Hand Ranking</string>
+    <string name="rankingTitleText">Starting Hands Guide</string>
     <string name="rankingUserInputHint">Enter Starting Hand Here</string>
     <string name="rankingButtonText">Get Rank</string>
     <string name="rankingInvalidInput">Invalid Hand\nPress ? for Help.</string>
+    <string name="rankingInvalidHand">Invalid Hand</string>
+    <string name="rankingPressForHelp">Press ? for Help</string>
+    <string name="rankingRankText">Rank:</string>
+    <string name="rankingWinPCTText">Win Percent:</string>
 </resources>
