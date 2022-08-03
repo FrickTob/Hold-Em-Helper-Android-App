@@ -1,12 +1,7 @@
 package com.example.mypokerassistant;
 
-import com.example.mypokerassistant.PokerParts.PokerCard;
-import com.example.mypokerassistant.PokerParts.PokerHand;
 import com.example.mypokerassistant.PokerParts.PokerHandSuitless;
-import com.example.mypokerassistant.PokerParts.PokerTable;
-import com.example.mypokerassistant.PokerStats.AnalyzeHand;
-import com.example.mypokerassistant.PokerStats.CompareTwoHands;
-import com.example.mypokerassistant.PokerStats.HandRankList;
+import com.example.mypokerassistant.PokerParts.HandRankList;
 
 import junit.framework.TestCase;
 
@@ -18,8 +13,8 @@ import junit.framework.TestCase;
 public class HandRankTesting extends TestCase {
 
     public void testHandRankList() {
-        PokerHandSuitless hand = HandRankList.getHand(0);
-        PokerHandSuitless handy = new PokerHandSuitless('A', 'A', false);
-        assertEquals(hand.getString(), handy.getString());
+        PokerHandSuitless hand = new PokerHandSuitless('A', 'A', false);
+        assertEquals(HandRankList.getRank(hand), 1);
+        assertEquals(HandRankList.getWinPercent(1), .31);
     }
 }

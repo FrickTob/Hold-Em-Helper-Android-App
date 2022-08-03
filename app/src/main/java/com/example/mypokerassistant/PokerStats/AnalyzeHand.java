@@ -75,7 +75,7 @@ public class AnalyzeHand {
 		return handPriority;
 	}
 	
-//	10, J, Q, K, and A must be converted to :, ;, <, =, and 1 respectively so that ASCII numbers can be compared more simply
+//	10, J, Q, K, and A must be converted to :, ;, <, =, and > respectively so that ASCII numbers can be compared more simply
 	public void convertValuesToAscendingASCII() {
 		for(int i = 0; i < values.size(); i++) {
 			if(values.get(i) == '0') {

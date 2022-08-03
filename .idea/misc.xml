@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_hand_guide.xml" value="0.25" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_hand_ranking.xml" value="0.4" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_winning_odds.xml" value="0.2841918294849023" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/main_activity_info_popup.xml" value="0.8800000000000001" />
       </map>
     </option>

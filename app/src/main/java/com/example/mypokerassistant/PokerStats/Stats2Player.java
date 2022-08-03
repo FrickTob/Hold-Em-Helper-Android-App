@@ -12,22 +12,33 @@ public class Stats2Player {
 	//Formatting must be checked before function call
 	public float getOdds(String cardString) {
 
-		PokerCard handCard1 = new PokerCard(cardString.charAt(0), cardString.charAt(1));
-		PokerCard handCard2 = new PokerCard(cardString.charAt(2), cardString.charAt(3));
+		// Sort user input string into values and suits //
+		Character[] values = new Character[cardString.length() / 2];
+		for(int i = 0; i < cardString.length(); i += 2) {
+			values[i] = Character.toUpperCase(cardString.charAt(i)); // case insensitive user input
+		}
+		Character[] suits = new Character[cardString.length() / 2];
+		for(int i = 1; i < cardString.length(); i += 2) {
+			suits[i] = Character.toUpperCase(cardString.charAt(i)); // case insensitive user input
+		}
+
+		// Create Cards for Analysis //
+		PokerCard handCard1 = new PokerCard(values[0], suits[0]);
+		PokerCard handCard2 = new PokerCard(values[1], suits[1]);
 		PokerHand hand = new PokerHand(handCard1, handCard2);
-		PokerCard flop1 = new PokerCard(cardString.charAt(4), cardString.charAt(5));
-		PokerCard flop2 = new PokerCard(cardString.charAt(6), cardString.charAt(7));
-		PokerCard flop3 = new PokerCard(cardString.charAt(8), cardString.charAt(9));
+		PokerCard flop1 = new PokerCard(values[2], suits[2]);
+		PokerCard flop2 = new PokerCard(values[3], suits[3]);
+		PokerCard flop3 = new PokerCard(values[4], suits[4]);
 
 		if (cardString.length() == 10)
 			return winningOddsGivenFlop(hand, flop1, flop2, flop3);
 
-		PokerCard turn = new PokerCard(cardString.charAt(10), cardString.charAt(11));
+		PokerCard turn = new PokerCard(values[5], suits[5]);
 
 		if (cardString.length() == 12)
 			return winningOddsGivenTurn(hand, flop1, flop2, flop3, turn);
 
-		PokerCard river = new PokerCard(cardString.charAt(12), cardString.charAt(13));
+		PokerCard river = new PokerCard(values[6], suits[6]);
 		PokerTable table = new PokerTable(flop1, flop2, flop3, turn, river);
 
 		if (cardString.length() == 14)
