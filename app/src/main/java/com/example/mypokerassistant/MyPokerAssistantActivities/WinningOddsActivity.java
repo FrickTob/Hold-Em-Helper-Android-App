@@ -1,6 +1,8 @@
 package com.example.mypokerassistant.MyPokerAssistantActivities;
 
 import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +67,7 @@ public class WinningOddsActivity extends AppCompatActivity {
 
         dialogBuilder.setView(helpPopUpView);
         dialog = dialogBuilder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
         closeButton.setOnClickListener(view -> dialog.dismiss());

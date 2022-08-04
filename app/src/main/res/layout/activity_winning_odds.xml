@@ -59,6 +59,7 @@
             android:layout_marginTop="32dp"
             android:autofillHints=""
             android:text="@string/oddsGetOdds"
+            android:background="@drawable/button_background"
             app:layout_constraintBottom_toTopOf="@id/oddsOutput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,8 +71,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/oddsHelpButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/getOddsButton" />
@@ -94,13 +96,11 @@
             android:id="@+id/oddsHelpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/oddsHelpButtonContentDescription"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/oddsOutput"
             app:srcCompat="@android:drawable/ic_menu_help"
             tools:ignore="ImageContrastCheck" />
 

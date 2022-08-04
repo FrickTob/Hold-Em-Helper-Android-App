@@ -3,6 +3,7 @@ package com.example.mypokerassistant.MyPokerAssistantActivities;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private TextView infoPopUpTitle;
     private ImageButton mainInfoCloseButton;
 
     @Override
@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
     public void createInfoPopUp() {
         dialogBuilder = new AlertDialog.Builder(this);
         final View helpPopUpView = getLayoutInflater().inflate(R.layout.popup_main_activity_info, null);
-        infoPopUpTitle = helpPopUpView.findViewById(R.id.mainInfoTitle);
         mainInfoCloseButton = helpPopUpView.findViewById(R.id.mainInfoCloseButton);
 
         dialogBuilder.setView(helpPopUpView);
         dialog = dialogBuilder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
         mainInfoCloseButton.setOnClickListener(view -> dialog.dismiss());

@@ -1,6 +1,8 @@
 package com.example.mypokerassistant.MyPokerAssistantActivities;
 
 import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,11 +40,12 @@ public class StartingHandGuideActivity extends AppCompatActivity {
     public void createInfoPopUp() {
         dialogBuilder = new AlertDialog.Builder(this);
         final View helpPopUpView = getLayoutInflater().inflate(R.layout.popup_starting_hand_guide_info, null);
-        infoPopUpTitle = helpPopUpView.findViewById(R.id.startingHandPopUpText);
+        infoPopUpTitle = helpPopUpView.findViewById(R.id.startingHandPopUpRankText);
         startingHandGuidePopUpCloseButton = helpPopUpView.findViewById(R.id.startingHandPopUpCloseButton);
 
         dialogBuilder.setView(helpPopUpView);
         dialog = dialogBuilder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
         startingHandGuidePopUpCloseButton.setOnClickListener(view -> dialog.dismiss());

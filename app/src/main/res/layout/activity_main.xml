@@ -20,12 +20,13 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
+            android:layout_marginTop="32dp"
             android:text="@string/handGuideButtonMessage"
-            app:layout_constraintBottom_toTopOf="@+id/infoButton"
+            android:background="@drawable/button_background"
+            app:layout_constraintBottom_toTopOf="@+id/winningOddsButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/winningOddsButton"
+            app:layout_constraintTop_toBottomOf="@+id/handRankingButton"
             tools:ignore="TextContrastCheck" />
 
         <Button
@@ -36,7 +37,8 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:text="@string/handRankingButtonMessage"
-            app:layout_constraintBottom_toTopOf="@+id/winningOddsButton"
+            android:background="@drawable/button_background"
+            app:layout_constraintBottom_toTopOf="@+id/handGuideButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mainLogo"
@@ -48,12 +50,13 @@
             android:layout_height="100dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
             android:text="@string/winningOddsButtonMessage"
-            app:layout_constraintBottom_toTopOf="@id/handGuideButton"
+            android:background="@drawable/button_background"
+            app:layout_constraintBottom_toTopOf="@id/infoButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/handRankingButton"
+            app:layout_constraintTop_toBottomOf="@id/handGuideButton"
             tools:ignore="TextContrastCheck" />
 
         <ImageButton
@@ -61,11 +64,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
+            android:background="@drawable/button_background"
             android:contentDescription="@string/infoButtonContent"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@android:drawable/ic_dialog_info"
+            app:srcCompat="@android:drawable/ic_menu_info_details"
             tools:ignore="ImageContrastCheck" />
 
         <ImageView
