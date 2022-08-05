@@ -11,7 +11,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MyPokerAssistantActivities.HandRankingActivity">
+        tools:context=".MyPokerAssistantActivities.HandRankingActivity"
+        android:background="@color/almost_white"
+        android:backgroundTint="@color/almost_white">
 
 
         <TextView
@@ -30,10 +32,10 @@
             android:id="@+id/royalFlushText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:text="@string/rankingRoyalFlush"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Title" />
 
@@ -41,7 +43,7 @@
             android:id="@+id/royalFlushImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -58,10 +60,10 @@
             android:id="@+id/straightFlushText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/rankingStraightFlush"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/royalFlushImage" />
 
@@ -69,7 +71,7 @@
             android:id="@+id/straightFlushImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -86,10 +88,10 @@
             android:id="@+id/fourOfAKindText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/rankingFourOfAKind"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/straightFlushImage" />
 
@@ -97,7 +99,7 @@
             android:id="@+id/fourOfAKindImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -114,10 +116,10 @@
             android:id="@+id/fullHouseText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/rankingFullHouse"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fourOfAKindImage" />
 
@@ -125,7 +127,7 @@
             android:id="@+id/fullHouseImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -142,10 +144,10 @@
             android:id="@+id/flushText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/rankingFlush"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fullHouseImage" />
 
@@ -153,7 +155,7 @@
             android:id="@+id/flushImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -170,10 +172,10 @@
             android:id="@+id/straightText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/rankingStraight"
             android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/flushImage" />
 
@@ -181,7 +183,7 @@
             android:id="@+id/straightImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -203,13 +205,14 @@
             android:text="@string/rankingThreeOfAKind"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/straightImage" />
 
         <ImageView
             android:id="@+id/threeOfAKindImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -231,13 +234,14 @@
             android:text="@string/rankingTwoPair"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/threeOfAKindImage" />
 
         <ImageView
             android:id="@+id/twoPairImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -260,13 +264,14 @@
             android:text="@string/rankingOnePair"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/twoPairImage" />
 
         <ImageView
             android:id="@+id/onePairImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -288,13 +293,14 @@
             android:text="@string/rankingHighCard"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/onePairImage" />
 
         <ImageView
             android:id="@+id/highCardImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:maxWidth="400dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"

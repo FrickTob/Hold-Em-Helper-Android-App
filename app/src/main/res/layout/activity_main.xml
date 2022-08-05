@@ -11,8 +11,9 @@
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MyPokerAssistantActivities.MainActivity">
-
+        tools:context=".MyPokerAssistantActivities.MainActivity"
+        android:background="@color/almost_white"
+        android:backgroundTint="@color/almost_white">
         <Button
             android:id="@+id/handGuideButton"
             android:layout_width="0dp"
@@ -71,7 +72,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_info_details"
+            app:srcCompat="@android:drawable/ic_dialog_info"
             tools:ignore="ImageContrastCheck" />
 
         <ImageView

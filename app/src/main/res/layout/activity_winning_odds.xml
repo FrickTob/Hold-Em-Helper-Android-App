@@ -11,13 +11,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MyPokerAssistantActivities.WinningOddsActivity">
+        tools:context=".MyPokerAssistantActivities.WinningOddsActivity"
+        android:background="@color/almost_white"
+        android:backgroundTint="@color/almost_white">
 
         <EditText
             android:id="@+id/tableInput"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/oddsTableHint"
@@ -33,10 +35,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/oddsTable"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/tableInput"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.279"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/handInput" />
 
@@ -44,13 +46,14 @@
             android:id="@+id/handTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="80dp"
             android:text="@string/oddsHand"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/handInput"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/oddsTitleText" />
 
         <Button
             android:id="@+id/getOddsButton"
@@ -58,8 +61,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:autofillHints=""
-            android:text="@string/oddsGetOdds"
             android:background="@drawable/button_background"
+            android:text="@string/oddsGetOdds"
             app:layout_constraintBottom_toTopOf="@id/oddsOutput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,9 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/oddsHelpButton"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/getOddsButton" />
@@ -82,7 +83,7 @@
             android:id="@+id/handInput"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/oddsHandHint"
@@ -103,6 +104,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@android:drawable/ic_menu_help"
             tools:ignore="ImageContrastCheck" />
+
+        <ProgressBar
+            android:id="@+id/oddsProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            android:indeterminateTint="@color/red_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oddsOutput" />
+
+        <TextView
+            android:id="@+id/oddsTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/oddsTitleText"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

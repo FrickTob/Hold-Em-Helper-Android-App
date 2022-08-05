@@ -11,5 +11,6 @@
     <color name="red_main">#ba181b</color>
     <color name="red_secondary">#A4161A</color>
     <color name="red_dark">#660708</color>
+    <color name="light_gray">#B1A7A6</color>
 
 </resources>

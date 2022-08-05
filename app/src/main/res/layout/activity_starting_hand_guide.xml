@@ -10,7 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MyPokerAssistantActivities.StartingHandGuideActivity">
+        tools:context=".MyPokerAssistantActivities.StartingHandGuideActivity"
+        android:background="@color/almost_white"
+        android:backgroundTint="@color/almost_white">
 
         <EditText
             android:id="@+id/handGuideInputText"

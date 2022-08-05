@@ -16,14 +16,14 @@
             android:id="@+id/startingHandPopUpRankText"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/rankingPopUpRankDescription"
             android:textColor="@color/almost_white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpRank" />
 
         <ImageButton
             android:id="@+id/startingHandPopUpCloseButton"
@@ -49,21 +49,65 @@
             android:textColor="@color/almost_white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.534"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpRankText" />
+            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpWinPCT" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/lato"
             android:text="@string/handInputDescription"
             android:textColor="@color/almost_white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpHowToEnter"
+            app:layout_constraintVertical_bias="0.272" />
+
+        <TextView
+            android:id="@+id/startingHandPopUpRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32sp"
+            android:fontFamily="@font/lato"
+            android:text="@string/rankingPopUpRank"
+            android:textColor="@color/almost_white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.213"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/startingHandPopUpWinPCT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32sp"
+            android:fontFamily="@font/lato"
+            android:text="@string/rankingPopUpWinPCT"
+            android:textColor="@color/almost_white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.289"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpRankText" />
+
+        <TextView
+            android:id="@+id/startingHandPopUpHowToEnter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32sp"
+            android:fontFamily="@font/lato"
+            android:text="@string/howToEnterCards"
+            android:textColor="@color/almost_white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.397"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpWinPCTText" />
     </androidx.constraintlayout.widget.ConstraintLayout>

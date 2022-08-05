@@ -1,7 +1,8 @@
 <resources>
     <!-- MISC Strings -->
     <string name="app_name">My Poker Assistant</string>
-    <string name="handInputDescription"><b>How to enter cards</b>\nCards must be entered in Value&#8211;Suit format. Values and suits are abbreviated to a single letter or number (see below)\n1&#8211;9 &#8211; One &#8211; Nine\n0 &#8211; Ten\nJ &#8211; Jack\nQ &#8211; Queen\nK &#8211; King\nC &#8211; Clubs\nS &#8211; Spades\nD &#8211; Diamonds\nH &#8211; Hearts\nEx: If your starting hand is Ace of Clubs and Ten of Hearts, you would enter AC0H</string>
+    <string name="howToEnterCards"><b>How to Enter Cards</b></string>
+    <string name="handInputDescription">Cards must be entered in Value&#8211;Suit format. Values and suits are abbreviated to a single letter or number (see below)\n1&#8211;9 &#8211; One &#8211; Nine\n0 &#8211; Ten\nJ &#8211; Jack\nQ &#8211; Queen\nK &#8211; King\nC &#8211; Clubs\nS &#8211; Spades\nD &#8211; Diamonds\nH &#8211; Hearts\nEx: If your starting hand is Ace of Clubs and Ten of Hearts, you would enter AC0H</string>
 
     <!-- Main Activity Strings -->
     <string name="handRankingButtonMessage">Hand Rankings</string>
@@ -58,8 +59,11 @@
     <string name="oddsHelpButtonContentDescription">Press For Help</string>
     <string name="oddsPopUpCloseButtonContentDescription">Press to Close</string>
     <string name="oddsPleaseWaitMessage">Calculating odds&#8230;</string>
-    <string name="oddsPopUpDescription"><b>Winning Odds</b>\nThe odds your hand beats another random hand\n<b>Note:</b> This is not a practical statistic to use when determining whether or not to play your hand. Instead, it should be used to inform you of the general strength of your hand given a flop/river/turn.</string>
-    <string name="oddsInputDescription"><b>How to enter cards</b>\nCards must be entered in Value&#8211;Suit format. Values and suits are abbreviated to a single letter or number (see below)\n1&#8211;9 &#8211; One &#8211; Nine\n0 &#8211; Ten\nJ &#8211; Jack\nQ &#8211; Queen\nK &#8211; King\nC &#8211; Clubs\nS &#8211; Spades\nD &#8211; Diamonds\nH &#8211; Hearts\nEx: If your starting hand is Ace of Clubs and Ten of Hearts, you would enter AC0H\n\n<b>Note:</b> You must enter at least three table cards. The more cards you enter, the faster My Poker Assistant is able to calculate your winning odds.</string>
+    <string name="oddsPupUpWinningOdds"><b>Winning Odds</b></string>
+    <string name="oddsPopUpDescription">The odds your hand beats another random hand\n<b>Note:</b> This is not a practical statistic to use when determining whether or not to play your hand. Instead, it should be used to inform you of the general strength of your hand given a flop/river/turn.</string>
+    <string name="oddsPopUpHowToEnterCards"><b>How to Enter Cards</b></string>
+    <string name="oddsInputDescription">Cards must be entered in Value&#8211;Suit format. Values and suits are abbreviated to a single letter or number (see below)\n1&#8211;9 &#8211; One &#8211; Nine\n0 &#8211; Ten\nJ &#8211; Jack\nQ &#8211; Queen\nK &#8211; King\nC &#8211; Clubs\nS &#8211; Spades\nD &#8211; Diamonds\nH &#8211; Hearts\nEx: If your starting hand is Ace of Clubs and Ten of Hearts, you would enter AC0H\n\n<b>Note:</b> You must enter at least three table cards. The more cards you enter, the faster My Poker Assistant is able to calculate your winning odds.</string>
+    <string name="oddsTitleText">Winning Odds</string>
 
     <!-- Hand Ranking Activity Strings -->
     <string name="rankingTitleText">Starting Hands Guide</string>
@@ -70,6 +74,8 @@
     <string name="rankingPressForHelp">Press ? for Help</string>
     <string name="rankingRankText">Rank:</string>
     <string name="rankingWinPCTText">Win Percent:</string>
-    <string name="rankingPopUpRankDescription"><b>Rank</b>\nThe hand\'s rank out of the 169 possible starting hands</string>
-    <string name="rankingPopUpWinPCTDescription"><b> Win Percent</b>\nHow often this hand wins when paired against nine other random hands.</string>
+    <string name="rankingPopUpRank"><b>Rank</b></string>
+    <string name="rankingPopUpRankDescription">The hand\'s rank out of the 169 possible starting hands</string>
+    <string name="rankingPopUpWinPCT"><b>Win Percent</b></string>
+    <string name="rankingPopUpWinPCTDescription">How often this hand wins when paired against nine other random hands.</string>
 </resources>

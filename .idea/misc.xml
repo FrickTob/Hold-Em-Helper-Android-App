@@ -9,14 +9,14 @@
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2315" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/drawable/pop_up_background.xml" value="0.2315" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_hand_guide.xml" value="0.25" />
-        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_hand_ranking.xml" value="0.4" />
-        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_starting_hand_guide.xml" value="0.25" />
-        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_winning_odds.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_hand_ranking.xml" value="0.24539877300613497" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_starting_hand_guide.xml" value="0.1" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/activity_winning_odds.xml" value="0.1" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/main_activity_info_popup.xml" value="0.8800000000000001" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/popup_main_activity_info.xml" value="0.2" />
         <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/popup_starting_hand_guide_info.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/popup_winning_odds.xml" value="0.1" />
+        <entry key="..\:/Users/tobyf/AndroidStudioProjects/MyPokerAssistant/app/src/main/res/layout/popup_winning_odds.xml" value="0.264" />
       </map>
     </option>
   </component>
