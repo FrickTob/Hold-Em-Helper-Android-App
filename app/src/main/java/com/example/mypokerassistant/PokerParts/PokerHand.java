@@ -15,11 +15,7 @@ public class PokerHand {
 	public PokerHand(PokerCard card1, PokerCard card2) {
 		this.card1 = card1;
 		this.card2 = card2;
-
 	}
-
-
-
 	
 	public PokerCard getCard1() {
 		return card1;

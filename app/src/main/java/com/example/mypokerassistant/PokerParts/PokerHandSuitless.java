@@ -1,10 +1,14 @@
 package com.example.mypokerassistant.PokerParts;
 
+/**
+ * Class that represents a hand in poker with a boolean data field to see if the hand is suited
+ * rather than specify suit of each card in hand. Used for the Starting Hand Guide section of app.
+ * @author tobyf
+ */
 public class PokerHandSuitless {
     private char card1;
     private char card2;
     private boolean suited;
-    // Win Percent Calculated against 9 random hands
     private double winPercent = 0;
 
     public PokerHandSuitless(String handString) {
@@ -40,8 +44,8 @@ public class PokerHandSuitless {
         char tempCard1 = convertToAscendingASCII(card2);
         char tempCard2 = convertToAscendingASCII(card1);
 
-        char highest = card1 > card2 ? card1 : card2;
-        char lowest = card1 > card2 ? card2 : card1;
+        char highest = tempCard1 > tempCard2 ? card1 : card2;
+        char lowest = tempCard1 > tempCard2 ? card2 : card1;
 
         return "" + highest + lowest + suited;
 

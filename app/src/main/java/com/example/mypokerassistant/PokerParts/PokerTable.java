@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * 
+ * Class to represent a poker table with data fields to hold five PokerCards
  * @author tobyf
  *
  */
@@ -14,85 +14,19 @@ public class PokerTable {
 	private PokerCard flop3;
 	private PokerCard turn;
 	private PokerCard river;
-	private ArrayList<PokerCard> community;
 	
 	public PokerTable(PokerCard flop1, PokerCard flop2, PokerCard flop3, PokerCard turn, PokerCard river) {
-		community = new ArrayList<>();
 		this.flop1 = flop1;
 		this.flop2 = flop2;
 		this.flop3 = flop3;
 		this.turn = turn;
 		this.river = river;
-		community.add(flop1);
-		community.add(flop2);
-		community.add(flop3);
-		community.add(turn);
-		community.add(river);
 	}
-	
-	public PokerTable() {
-		Random r = new Random();
-		ArrayList<PokerCard> remainingCards = new ArrayList<>();
-		for(int i = 0; i < AllCards.NUMCARDS; i++)
-			remainingCards.add(AllCards.getCard(i));
-		int numCardsRemaining = AllCards.NUMCARDS;
-		
-		PokerCard currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.flop1 = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.flop2 = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.flop3 = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.turn = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.river = currCard;
-		remainingCards.remove(currCard);
-		
-	}
-	
-	public PokerTable(ArrayList<PokerCard> spentCards) {
-		Random r = new Random();
-		ArrayList<PokerCard> remainingCards = new ArrayList<>();
-		for(int i = 0; i < AllCards.NUMCARDS; i++)
-			remainingCards.add(AllCards.getCard(i));
-		
-		for(int i = 0; i < spentCards.size(); i++) {
-			remainingCards.remove(spentCards.get(i));
-		}
-		
-		int numCardsRemaining = AllCards.NUMCARDS - spentCards.size();
-		
-		PokerCard currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.flop1 = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.flop2 = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.flop3 = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.turn = currCard;
-		remainingCards.remove(currCard);
-		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
-		this.river = currCard;
-		remainingCards.remove(currCard);
-		
-	}
-	
+
+	/**
+	 * Constructor to generate random table given a poker hand
+	 * @param hand hand of player which restricts what cards can appear on table
+	 */
 	public PokerTable(PokerHand hand) {
 		Random r = new Random();
 		ArrayList<PokerCard> remainingCards = new ArrayList<>();
@@ -120,11 +54,11 @@ public class PokerTable {
 		this.turn = currCard;
 		remainingCards.remove(currCard);
 		
-		currCard = remainingCards.get(r.nextInt(numCardsRemaining--));
+		currCard = remainingCards.get(r.nextInt(numCardsRemaining));
 		this.river = currCard;
 		remainingCards.remove(currCard);
 	}
-	
+
 	public static PokerCard convertToCard(int valueNum, int suitNum) {
 		char value = 'X';
 		char suit = 'X';
@@ -170,11 +104,7 @@ public class PokerTable {
 		if(suit == 'X') System.out.println("Invalid Suit Input: Must be a number between 1 and 4");
 		return new PokerCard(value, suit);
 	}
-	
-//	public Array<PokerCard> getFlop() {
-//		return flop1+flop2+flop3;
-//	}
-	
+
 	public void setFlop1(PokerCard flop1) {
 		this.flop1 = flop1;
 	}
@@ -187,9 +117,7 @@ public class PokerTable {
 		this.flop2 = flop2;
 	}
 	
-	public PokerCard getFlop2() {
-		return flop2;
-	}
+	public PokerCard getFlop2() { return flop2; }
 	
 	public void setFlop3(PokerCard flop3) {
 		this.flop3 = flop3;

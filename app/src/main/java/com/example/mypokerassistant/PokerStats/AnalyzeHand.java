@@ -2,11 +2,18 @@ package com.example.mypokerassistant.PokerStats;
 
 import android.annotation.SuppressLint;
 
+import androidx.annotation.NonNull;
+
 import com.example.mypokerassistant.PokerParts.PokerHand;
 import com.example.mypokerassistant.PokerParts.PokerTable;
 
 import java.util.ArrayList;
 
+/**
+ * Contains methods to analyze a hand so that it may be compared to other hands
+ * to determine which hand is stronger.
+ * @author tobyf
+ */
 public class AnalyzeHand {
 
 	private String handAndTable;
@@ -15,7 +22,7 @@ public class AnalyzeHand {
 	private int handPriority; // ranking of hand
 	
 	@SuppressLint("NewApi")
-	public AnalyzeHand(PokerHand hand, PokerTable table) {
+	public AnalyzeHand(@NonNull PokerHand hand, @NonNull PokerTable table) {
 		this.values = new ArrayList<>();
 		this.suits = new ArrayList<>();	
 
@@ -23,7 +30,8 @@ public class AnalyzeHand {
 		handAndTable = "" + hand.getCard1().getCard() + hand.getCard2().getCard() 
 				+ table.getFlop1().getCard() + table.getFlop2().getCard() + table.getFlop3().getCard()
 				+ table.getTurn().getCard() + table.getRiver().getCard();
-		
+
+		// Add all values and sort them
 		values.add(handAndTable.charAt(0));
 		values.add(handAndTable.charAt(2));
 		values.add(handAndTable.charAt(4));
@@ -33,8 +41,8 @@ public class AnalyzeHand {
 		values.add(handAndTable.charAt(12));
 		convertValuesToAscendingASCII();
 		values.sort(null);
-		
-		
+
+		// Add all suits and sort them
 		suits.add(handAndTable.charAt(1));
 		suits.add(handAndTable.charAt(3));
 		suits.add(handAndTable.charAt(5));

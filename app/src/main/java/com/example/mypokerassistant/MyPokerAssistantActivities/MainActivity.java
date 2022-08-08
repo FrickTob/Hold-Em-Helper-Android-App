@@ -18,6 +18,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.mypokerassistant.R;
 
+/**
+ * User Starts on this activity
+ * Features navigation to HandRankingActivity, WinningOddsActivity, and StartingHandGuideActivity
+ * as well as a pop up for new-user explanation
+ * @author tobyf
+ */
 public class MainActivity extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
@@ -46,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         handGuideButton.setOnClickListener(this::goToHandGuideActivity);
     }
 
-    // Set up Info Pop Up
     public void createInfoPopUp() {
         dialogBuilder = new AlertDialog.Builder(this);
         final View helpPopUpView = getLayoutInflater().inflate(R.layout.popup_main_activity_info, null);

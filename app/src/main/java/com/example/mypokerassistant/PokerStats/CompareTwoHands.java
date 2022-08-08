@@ -6,6 +6,7 @@ import com.example.mypokerassistant.PokerParts.PokerTable;
 import java.util.ArrayList;
 
 /**
+ * Contains methods to determine the winner between two given poker hands
  * @author tobyf
  *
  */

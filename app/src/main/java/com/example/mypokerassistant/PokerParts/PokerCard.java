@@ -3,7 +3,6 @@ package com.example.mypokerassistant.PokerParts;
 /**
  * Represents a real poker card with a value and suit
  * @author tobyf
- *
  */
 public class PokerCard  {
 	private char value;

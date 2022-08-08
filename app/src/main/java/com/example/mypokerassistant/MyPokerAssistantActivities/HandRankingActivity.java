@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mypokerassistant.R;
 
+/**
+ * Activity visited by user on handRankingButton press.
+ * Displays a list of all scoring hands in order
+ * @author tobyf
+ */
 public class HandRankingActivity extends AppCompatActivity {
 
     @Override

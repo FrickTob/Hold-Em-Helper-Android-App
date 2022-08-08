@@ -6,6 +6,10 @@ import com.example.mypokerassistant.PokerParts.PokerHandSuitless;
 
 import java.util.ArrayList;
 
+/**
+ * All possible starting hands are listed here in order for use in finding ranks
+ * @author tobyf
+ */
 public class HandRankList {
 
     private HandRankList() {}
@@ -358,6 +362,11 @@ public class HandRankList {
 
     public static final int NUM_HANDS = HAND_RANK_ARRAY.size();
 
+    /**
+     * Search for hand in list for rank of that hand
+     * @param hand hand to find
+     * @return rank of hand
+     */
     public static int getRank(PokerHandSuitless hand) {
         String handString = hand.getString();
         for (int i = 0; i < NUM_HANDS; i++) {
@@ -368,6 +377,12 @@ public class HandRankList {
         }
         return -1;
     }
+
+    /**
+     * Get win percent associated with a given rank
+     * @param rank rank of hand you want to find win percentage of
+     * @return win percent of hand at rank
+     */
     public static double getWinPercent(int rank) {
         return HAND_RANK_ARRAY.get(rank - 1).getWinPercent();
     }
