@@ -54,14 +54,23 @@ public class WinningHandTesting extends TestCase {
             new PokerCard('J', 'C'),
             new PokerCard('0', 'C'),
             new PokerCard('5', 'H'));
+    PokerTable straightFlushTable2 = new PokerTable(new PokerCard('3', 'S'),
+            new PokerCard('4', 'S'),
+            new PokerCard('5', 'S'),
+            new PokerCard('6', 'H'),
+            new PokerCard('7', 'H')
+            );
 
 
     public void testStraightFlush() {
-        PokerHand hand1 = new PokerHand(new PokerCard('A', 'C'), new PokerCard('K', 'S'));
-        PokerHand hand2 = new PokerHand(new PokerCard('9', 'C'), new PokerCard('J', 'D'));
+        PokerHand hand1 = new PokerHand(new PokerCard('A', 'C'), new PokerCard('K', 'H'));
+        PokerHand hand2 = new PokerHand(new PokerCard('A', 'S'), new PokerCard('2', 'S'));
 
-        assertEquals(1, CompareTwoHands.determineWinner(twoPairTable, hand1, hand2));
-        assertEquals(2, CompareTwoHands.determineWinner(twoPairTable, hand2, hand1));
+        assertEquals(1, CompareTwoHands.determineWinner(straightFlushTable2, hand2, hand1));
+
+        AnalyzeHand straightFlushHand = new AnalyzeHand(hand2, straightFlushTable2);
+        assertEquals(1, straightFlushHand.determineHandStrength());
+        assertEquals(1, CompareTwoHands.determineWinner(straightFlushTable, hand1, hand2));
     }
 
     public void testFourOfaKind() {

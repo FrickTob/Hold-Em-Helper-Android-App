@@ -132,7 +132,7 @@ public class WinningOddsActivity extends AppCompatActivity {
         @Override
         public void run() {
             Stats2Player stats = new Stats2Player();
-            final double odds = stats.getOdds(cardString) * 100;
+            final float odds = stats.getOdds(cardString) * 100;
 
             // Update UI components after calculating odds to display odds and remove progressBar
             runOnUiThread(new Runnable() {
@@ -143,7 +143,7 @@ public class WinningOddsActivity extends AppCompatActivity {
                     ProgressBar progressBar = findViewById(R.id.oddsProgressBar);
 
                     // Update UI components
-                    oddsOutput.setText(String.format(Locale.ENGLISH, "Winning Odds: %.1f%%", odds));
+                    oddsOutput.setText(String.format(Locale.ENGLISH, "Winning Odds: %.2f%%", odds));
                     progressBar.setVisibility(View.INVISIBLE);
 
                 }
