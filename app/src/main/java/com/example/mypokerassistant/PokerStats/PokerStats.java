@@ -15,11 +15,10 @@ import java.util.concurrent.Executors;
 /**
  * Contains methods to calculate winning odds given a poker hand and at least three table cards
  */
-public class Stats2Player {
+public class PokerStats {
 
 	//Formatting must be checked before function call
 	public float getOdds(@NonNull String cardString) {
-
 
 		// Create Cards for Analysis //
 		PokerCard handCard1 = new PokerCard(cardString.charAt(0), cardString.charAt(1));

@@ -4,9 +4,11 @@
         <shape android:shape="rectangle">
             <gradient
                 android:startColor="@color/almost_white"
+                android:type="sweep"
+                android:gradientRadius="300dp"
                 android:centerColor="@color/red_main"
                 android:endColor="@color/almost_white"/>
-            <corners android:radius="2dp"/>
+            <corners android:radius="10dp"/>
 
         </shape>
     </item>

@@ -11,19 +11,19 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- * Contains methods to analyze a hand so that it may be compared to other hands
+ * Contains methods to analyze a poker hand so that it may be compared to other hands
  * to determine which hand is stronger.
  * @author tobyf
  */
-public class AnalyzeHand {
+public class OneHandAnalysis {
 
 	private String handAndTable;
 	private int handPriority; // ranking of hand
 	private ArrayList<Character[]> cards;
 	private ArrayList<Character> values;
-	
+
 	@SuppressLint("NewApi")
-	public AnalyzeHand(@NonNull PokerHand hand, @NonNull PokerTable table) {
+	public OneHandAnalysis(@NonNull PokerHand hand, @NonNull PokerTable table) {
 		handAndTable = "" + hand.getCard1().getCard() + hand.getCard2().getCard()
 				+ table.getFlop1().getCard() + table.getFlop2().getCard() + table.getFlop3().getCard()
 				+ table.getTurn().getCard() + table.getRiver().getCard();
@@ -96,35 +96,58 @@ public class AnalyzeHand {
 
 	//	Hand Type Determiner Methods
 	public char isStraightFlush() {
-		char highestValInStraight = isStraight();
 		if(isStraight() == 'X') return 'X';  // not straight so can't be straight flush
 		if(isFlush()[0] == 'X') return 'X'; // not flush so can't be straight flush
 
-		// Check for straight flush
-		for(int i = 6; i >= 4; i--) { // start at end to ensure highest straight flush
-			char flushSuit = cards.get(i)[1];
-			if(cards.get(i)[0] == cards.get(i - 1)[0] + 1 && cards.get(i - 1)[1] == flushSuit
-					&& cards.get(i - 1)[0] == cards.get(i - 2)[0] + 1 && cards.get(i - 2)[1] == flushSuit
-					&& cards.get(i - 2)[0] == cards.get(i - 3)[0] + 1 && cards.get(i - 3)[1] == flushSuit
-					&& cards.get(i - 3)[0] == cards.get(i - 4)[0] + 1 && cards.get(i - 4)[1] == flushSuit) // check consecutive and same suit
-				return cards.get(i)[0]; // return highest value for tie breaking
+		// Create an 13 element array with a string for each value
+		// Populate strings with suits of cards of the corresponding value
+		String[] values = tallyValuesForStraightFlush();
 
-			// Check for A-5 straight flush
-			if(cards.get(i)[0] == '>') {
-				int Athru5cardsFound = 1;
-				for(int j = 0; j < 7; j++) { // scan array for rest of A-5 straight flush
-					if(cards.get(j)[0] == '2' && cards.get(j)[1] == flushSuit)
-						Athru5cardsFound++; // found the 2
-					if(cards.get(j)[0] == '3' && cards.get(j)[1] == flushSuit)
-						Athru5cardsFound++; // found the 3
-					if(cards.get(j)[0] == '4' && cards.get(j)[1] == flushSuit)
-						Athru5cardsFound++; // found the 4
-					if(cards.get(j)[0] == '5' && cards.get(j)[1] == flushSuit)
-						Athru5cardsFound++; // found the 5
-				}
-				if(Athru5cardsFound == 5)
-					return '5'; // return 5 if A-5 straight flush is found
+		// Search through array
+		for(int i = values.length - 1; i >= 4; i--) {
+			// Find straight
+			if (!values[i].equals("")
+					&& !values[i-1].equals("")
+					&& !values[i-2].equals("")
+					&& !values[i-3].equals("")
+					&& !values[i-4].equals("")) {
+
+				//Find suit of flush
+				char flushSuit;
+				if(values[i].length() == 1) { flushSuit = values[i].charAt(0);}
+				else if (values[i-1].length() == 1) { flushSuit = values[i-1].charAt(0);}
+				else if (values[i-2].length() == 1) { flushSuit = values[i-2].charAt(0);}
+				else if (values[i-3].length() == 1) { flushSuit = values[i-3].charAt(0);}
+				else { flushSuit = values[i-4].charAt(0);}
+
+				// See if the straight is also a flush
+				if(values[i].contains("" + flushSuit)
+						&& values[i - 1].contains("" + flushSuit)
+						&& values[i-2].contains("" + flushSuit)
+						&& values[i-3].contains("" +flushSuit)
+						&& values[i-4].contains("" + flushSuit))
+					return (char)(i + 50);
 			}
+		}
+		// Check A-5 straight flush
+		if(!values[12].equals("") // A
+				&& !values[0].equals("") // 2
+				&& !values[1].equals("") // 3
+				&& !values[2].equals("") // 4
+				&& !values[3].equals("")) {// 5
+			char flushSuit;
+			if(values[12].length() == 1) { flushSuit = values[12].charAt(0);}
+			else if (values[0].length() == 1) { flushSuit = values[0].charAt(0);}
+			else if (values[1].length() == 1) { flushSuit = values[1].charAt(0);}
+			else if (values[2].length() == 1) { flushSuit = values[2].charAt(0);}
+			else { flushSuit = values[3].charAt(0);}
+
+			if(values[12].contains("" + flushSuit)
+					&& values[0].contains("" + flushSuit)
+					&& values[1].contains("" + flushSuit)
+					&& values[2].contains("" +flushSuit)
+					&& values[3].contains("" + flushSuit))
+				return '5';
 		}
 		return 'X';
 
@@ -202,19 +225,23 @@ public class AnalyzeHand {
 	}
 	
 	public char isStraight() {
+		// Create 13 element int array for each value
+		// Tally number of times the corresponding value appears in the given hand
+		int[] values = tallyValuesForStraight();
 
-		for(int i = 0; i < cards.size() - 4; i++) {
-			if(cards.get(i)[0] - cards.get(i + 1)[0] == -1 // consecutive numbers
-					&& cards.get(i + 1)[0] - cards.get(i + 2)[0] == -1
-					&& cards.get(i + 2)[0] - cards.get(i + 3)[0] == -1
-					&& cards.get(i + 3)[0] - cards.get(i + 4)[0] == -1)
-				return cards.get(i + 4)[0]; // return highest for tiebreaking purposes
+		for(int i = values.length - 1; i >= 4; i--) {
+			if (values[i] >= 1
+					&& values[i-1] >= 1
+					&& values[i-2] >= 1
+					&& values[i-3] >= 1
+					&& values[i-4] >= 1) // five in a row
+				return (char)(i + 50);
 		}
-		if(cards.get(0)[0] == '2'
-				&& cards.get(6)[0] == '>'
-				&& cards.get(1)[0] == '3'
-				&& cards.get(2)[0] == '4'
-				&& cards.get(3)[0] == '5') //a-5 straight check
+		if(values[12] >= 1
+				&& values[0] >= 1
+				&& values[1] >= 1
+				&& values[2] >= 1
+				&& values[3] >= 1) // A-5 straight
 			return '5';
 		return 'X';
 	}
@@ -246,7 +273,7 @@ public class AnalyzeHand {
 		return 'X';
 }
 
-	// Getter Methods
+	// Getter methods
 	public ArrayList<Character[]> getCards() {
 		return cards;
 	}
@@ -258,6 +285,103 @@ public class AnalyzeHand {
 	public int getHandPriority() {
 		return handPriority;
 	}
-	
+
+	// Tally methods for isStraightFlush() and isStraight() methods
+	public String[] tallyValuesForStraightFlush() {
+		String[] values = {"","","","","","","","","","","","",""};
+		for(int i = 0; i < cards.size(); i++) {
+			switch (cards.get(i)[0]) { // add suits of each value to empty string
+				case '2':
+					values[0]+= cards.get(i)[1];
+					break;
+				case '3':
+					values[1]+= cards.get(i)[1];
+					break;
+				case '4':
+					values[2]+= cards.get(i)[1];
+					break;
+				case '5':
+					values[3]+= cards.get(i)[1];
+					break;
+				case '6':
+					values[4]+= cards.get(i)[1];
+					break;
+				case '7':
+					values[5]+= cards.get(i)[1];
+					break;
+				case '8':
+					values[6]+= cards.get(i)[1];
+					break;
+				case '9':
+					values[7]+= cards.get(i)[1];
+					break;
+				case ':':
+					values[8]+= cards.get(i)[1];
+					break;
+				case ';':
+					values[9]+= cards.get(i)[1];
+					break;
+				case '<':
+					values[10]+= cards.get(i)[1];
+					break;
+				case '=':
+					values[11]+= cards.get(i)[1];
+					break;
+				case '>':
+					values[12]+= cards.get(i)[1];
+					break;
+			}
+		}
+		return values;
+	}
+
+	public int[] tallyValuesForStraight() {
+		int[] values = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		for(int i = 0; i < cards.size(); i++) {
+			switch (cards.get(i)[0]) { // grab value and tally values array to look for straights
+				case '2':
+					values[0]++;
+					break;
+				case '3':
+					values[1]++;
+					break;
+				case '4':
+					values[2]++;
+					break;
+				case '5':
+					values[3]++;
+					break;
+				case '6':
+					values[4]++;
+					break;
+				case '7':
+					values[5]++;
+					break;
+				case '8':
+					values[6]++;
+					break;
+				case '9':
+					values[7]++;
+					break;
+				case ':':
+					values[8]++;
+					break;
+				case ';':
+					values[9]++;
+					break;
+				case '<':
+					values[10]++;
+					break;
+				case '=':
+					values[11]++;
+					break;
+				case '>':
+					values[12]++;
+					break;
+			}
+		}
+		return values;
+	}
+
 }
 

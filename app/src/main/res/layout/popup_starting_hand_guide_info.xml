@@ -2,7 +2,6 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,6 +18,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/rankingPopUpRankDescription"
+            android:textAlignment="textStart"
             android:textColor="@color/almost_white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +46,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/rankingPopUpWinPCTDescription"
+            android:textAlignment="textStart"
             android:textColor="@color/almost_white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,20 +55,18 @@
             app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpWinPCT" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/startingHandPopUpEnterCards1"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
             android:fontFamily="@font/lato"
-            android:text="@string/handInputDescription"
+            android:text="@string/handInputDescription1"
+            android:textAlignment="textStart"
             android:textColor="@color/almost_white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpHowToEnter"
-            app:layout_constraintVertical_bias="0.272" />
+            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpHowToEnter" />
 
         <TextView
             android:id="@+id/startingHandPopUpRank"
@@ -110,5 +109,33 @@
             app:layout_constraintHorizontal_bias="0.397"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpWinPCTText" />
+
+        <TextView
+            android:id="@+id/startingHandPopUpEnterCards2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/handInputDescription2"
+            android:textColor="@color/almost_white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/startingHandPopUpEnterCards1" />
+
+        <TextView
+            android:id="@+id/startingHandPopUpEnterCards3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/handInputDescription3"
+            android:textColor="@color/almost_white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startingHandPopUpEnterCards2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

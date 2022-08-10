@@ -69,7 +69,6 @@ public class StartingHandGuideActivity extends AppCompatActivity {
         EditText userInput = findViewById(R.id.handGuideInputText);
         TextView outputRank = findViewById(R.id.handGuideRankText);
         TextView outputWinPercent = findViewById(R.id.handGuideWinPCTText);
-        TextView detailedOutput = findViewById(R.id.handGuideDetailedOutput);
         String inputString = userInput.getText().toString();
 
         // Check for correct num of characters

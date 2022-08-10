@@ -2,7 +2,6 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -29,25 +28,26 @@
             android:id="@+id/mainPopUpHandRankTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/lato"
             android:text="@string/handRankingButtonMessage"
             android:textColor="@color/almost_white"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/mainPopUpHandRankDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/handRankingDescription"
             android:textColor="@color/almost_white"
-            android:textSize="16sp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainPopUpHandRankTitle" />
 
@@ -55,27 +55,28 @@
             android:id="@+id/mainPopUpStartingHandGuideTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/lato"
             android:text="@string/handGuideButtonMessage"
             android:textColor="@color/almost_white"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.433"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainPopUpHandRankDescription" />
 
         <TextView
             android:id="@+id/mainPopUpStartingHandGuideDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/handGuideDescription"
             android:textAlignment="viewStart"
             android:textColor="@color/almost_white"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainPopUpStartingHandGuideTitle" />
 
@@ -83,28 +84,29 @@
             android:id="@+id/mainPopUpWinningOddsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/lato"
             android:text="@string/winningOddsButtonMessage"
             android:textColor="@color/almost_white"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.309"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainPopUpStartingHandGuideDescription" />
 
         <TextView
             android:id="@+id/mainPopUpWinningOddsDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/winningOddsDescription"
             android:textAlignment="viewStart"
             android:textColor="@color/almost_white"
-            android:textSize="16sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mainPopUpWinningOddsTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>

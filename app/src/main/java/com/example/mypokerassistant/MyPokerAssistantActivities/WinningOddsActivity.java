@@ -1,12 +1,9 @@
 package com.example.mypokerassistant.MyPokerAssistantActivities;
 
 import android.app.AlertDialog;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,18 +11,14 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mypokerassistant.PokerStats.Stats2Player;
+import com.example.mypokerassistant.PokerStats.PokerStats;
 import com.example.mypokerassistant.R;
 
-import org.w3c.dom.Text;
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Activity visited by user when winningOddsButton is pressed.
@@ -64,6 +57,7 @@ public class WinningOddsActivity extends AppCompatActivity {
         // Get UI elements
         TextView outputMessage = findViewById(R.id.oddsOutput);
         ProgressBar progressBar = findViewById(R.id.oddsProgressBar);
+        TextView loadingMessage = findViewById(R.id.oddsLoadingMessage);
         EditText hand = findViewById(R.id.handInput);
         EditText tableCards = findViewById(R.id.tableInput);
 
@@ -71,11 +65,41 @@ public class WinningOddsActivity extends AppCompatActivity {
         String handText = hand.getText().toString();
         String tableCardsText = tableCards.getText().toString();
         String cardString = handText + tableCardsText;
+        cardString = cardString.toUpperCase();
 
-        // Check for invalid input formatting
+        // Check for invalid number of cards
         if(handText.length() != 4 || tableCardsText.length() < 6 || tableCardsText.length() > 10) {
-            outputMessage.setText(getString(R.string.oddsInvalidInput));
+            outputMessage.setText(getString(R.string.oddsInvalidInputNumCards));
             return;
+        }
+        // Check input for invalid characters
+        Character[] validValueChars = {'2', '3', '4', '5', '6', '7', '8', '9', '0', 'J', 'Q', 'K', 'A'};
+        Character[] validSuitChars = {'C', 'D', 'H', 'S'};
+        ArrayList<Character> validSuitArray = new ArrayList<>(Arrays.asList(validSuitChars));
+        ArrayList<Character> validValueArray = new ArrayList<>(Arrays.asList(validValueChars));
+        for(int i = 0; i < cardString.length(); i+= 2) { // check values
+            if(!validValueArray.contains(cardString.charAt(i))) {
+                outputMessage.setText(getString(R.string.oddsInvalidInputWrongChar));
+                return;
+            }
+        }
+        for(int i = 1; i < cardString.length(); i += 2) { // check suits
+            if(!validSuitArray.contains(cardString.charAt(i))) {
+                outputMessage.setText(getString(R.string.oddsInvalidInputWrongChar));
+                return;
+            }
+        }
+
+        // Check for repeated Cards
+        for(int i = 0; i < cardString.length() - 1; i+= 2) {
+            String currCard = "" + cardString.charAt(i) + cardString.charAt(i + 1);
+            for(int j = i + 2; j < cardString.length() - 1; j += 2) {
+                String comparedCard = "" + cardString.charAt(j) + cardString.charAt(j + 1);
+                if (currCard.equals(comparedCard)) {
+                    outputMessage.setText(getString(R.string.oddsInvalidInputRepeatedCard));
+                    return;
+                }
+            }
         }
 
         // Set up and start background thread to calculate odds
@@ -85,6 +109,10 @@ public class WinningOddsActivity extends AppCompatActivity {
 
         // UI to show loading is in progress
         progressBar.setVisibility(View.VISIBLE); // start progress bar
+        if(tableCardsText.length() == 6)
+            loadingMessage.setText(R.string.oddsPleaseWaitMessageFlop);
+        else
+            loadingMessage.setText(R.string.oddsPleaseWaitMessage);
         outputMessage.setText(""); // clear invalid hand output if applicable
     }
 
@@ -131,7 +159,7 @@ public class WinningOddsActivity extends AppCompatActivity {
          */
         @Override
         public void run() {
-            Stats2Player stats = new Stats2Player();
+            PokerStats stats = new PokerStats();
             final float odds = stats.getOdds(cardString) * 100;
 
             // Update UI components after calculating odds to display odds and remove progressBar
@@ -141,11 +169,12 @@ public class WinningOddsActivity extends AppCompatActivity {
                     // Retrieve UI components
                     TextView oddsOutput = findViewById(R.id.oddsOutput);
                     ProgressBar progressBar = findViewById(R.id.oddsProgressBar);
+                    TextView loadingMessage = findViewById(R.id.oddsLoadingMessage);
 
                     // Update UI components
                     oddsOutput.setText(String.format(Locale.ENGLISH, "Winning Odds: %.2f%%", odds));
+                    loadingMessage.setText("");
                     progressBar.setVisibility(View.INVISIBLE);
-
                 }
             });
         }
