@@ -14,6 +14,7 @@ import java.util.concurrent.Executors;
 
 /**
  * Contains methods to calculate winning odds given a poker hand and at least three table cards
+ * @author FrickTob
  */
 public class PokerStats {
 

@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  * Class to represent a poker table with data fields to hold five PokerCards
- * @author tobyf
+ * @author FrickTob
  *
  */
 public class PokerTable {

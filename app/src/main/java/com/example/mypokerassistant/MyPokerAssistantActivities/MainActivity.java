@@ -22,7 +22,7 @@ import com.example.mypokerassistant.R;
  * User Starts on this activity
  * Features navigation to HandRankingActivity, WinningOddsActivity, and StartingHandGuideActivity
  * as well as a pop up for new-user explanation
- * @author tobyf
+ * @author FrickTob
  */
 public class MainActivity extends AppCompatActivity {
 

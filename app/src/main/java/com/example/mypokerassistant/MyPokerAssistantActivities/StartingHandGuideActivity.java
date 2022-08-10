@@ -25,7 +25,7 @@ import java.util.Locale;
  * User is able to enter their starting hand in handGuideInputText and
  * the rank and winning percentage of that hand is displayed when handGuideRankButton
  * is pressed
- * @author tobyf
+ * @author FrickTob
  */
 public class StartingHandGuideActivity extends AppCompatActivity {
 

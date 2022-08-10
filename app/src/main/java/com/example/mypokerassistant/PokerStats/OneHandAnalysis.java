@@ -13,7 +13,7 @@ import java.util.Comparator;
 /**
  * Contains methods to analyze a poker hand so that it may be compared to other hands
  * to determine which hand is stronger.
- * @author tobyf
+ * @author FrickTob
  */
 public class OneHandAnalysis {
 

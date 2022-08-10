@@ -9,7 +9,7 @@ import com.example.mypokerassistant.R;
 /**
  * Activity visited by user on handRankingButton press.
  * Displays a list of all scoring hands in order
- * @author tobyf
+ * @author FrickTob
  */
 public class HandRankingActivity extends AppCompatActivity {
 

@@ -2,7 +2,7 @@ package com.example.mypokerassistant.PokerParts;
 
 /**
  * Represents a real poker card with a value and suit
- * @author tobyf
+ * @author FrickTob
  */
 public class PokerCard  {
 	private char value;

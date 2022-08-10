@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  * All possible starting hands are listed here in order for use in finding ranks
- * @author tobyf
+ * @author FrickTob
  */
 public class HandRankList {
 

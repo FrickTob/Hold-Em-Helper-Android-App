@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * Represents a player's hand in Texas Hold 'Em which contains two cards
- * @author tobyf
+ * @author FrickTob
  *
  */
 public class PokerHand {

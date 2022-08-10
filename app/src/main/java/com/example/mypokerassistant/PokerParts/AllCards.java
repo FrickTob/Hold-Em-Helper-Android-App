@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * All possible poker cards are listed here to be used in generating winning odds statistics
- * @author tobyf
+ * @author FrickTob
  */
 public class AllCards {
 	

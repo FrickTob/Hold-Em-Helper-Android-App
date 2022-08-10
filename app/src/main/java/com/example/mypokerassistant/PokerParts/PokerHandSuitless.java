@@ -3,7 +3,7 @@ package com.example.mypokerassistant.PokerParts;
 /**
  * Class that represents a hand in poker with a boolean data field to see if the hand is suited
  * rather than specify suit of each card in hand. Used for the Starting Hand Guide section of app.
- * @author tobyf
+ * @author FrickTob
  */
 public class PokerHandSuitless {
     private char card1;

@@ -24,7 +24,7 @@ import java.util.Locale;
  * Activity visited by user when winningOddsButton is pressed.
  * User is able to enter cards in handInput and winning odds are calculated when getOddsButton is pressed.
  * Help Pop-Up is also available to explain odds calculation and how to enter cards.
- * @author tobyf
+ * @author FrickTob
  */
 public class WinningOddsActivity extends AppCompatActivity {
 
