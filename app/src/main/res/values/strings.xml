@@ -79,6 +79,9 @@
     <string name="rankingButtonText">Get Rank</string>
     <string name="rankingInvalidInput">Invalid Hand\nPress ? for Help.</string>
     <string name="rankingInvalidHand">Invalid Hand</string>
+    <string name="rankingInvalidHandNumCards">Invalid Number of Cards</string>
+    <string name="rankingInvalidHandInvalidChar">Invalid Character Detected</string>
+    <string name="rankingInvalidHandDuplicateCard">Duplicate Cards Detected</string>
     <string name="rankingPressForHelp">Press ? for Help</string>
     <string name="rankingRankText">Rank:</string>
     <string name="rankingWinPCTText">Win Percent:</string>

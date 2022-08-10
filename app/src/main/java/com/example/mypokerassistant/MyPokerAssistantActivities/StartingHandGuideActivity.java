@@ -16,6 +16,8 @@ import com.example.mypokerassistant.PokerParts.HandRankList;
 import com.example.mypokerassistant.PokerParts.PokerHandSuitless;
 import com.example.mypokerassistant.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
 /**
@@ -73,17 +75,38 @@ public class StartingHandGuideActivity extends AppCompatActivity {
 
         // Check for correct num of characters
         if(inputString.length() != 4) {
-            outputRank.setText(R.string.rankingInvalidHand);
+            outputRank.setText(R.string.rankingInvalidHandNumCards);
             outputWinPercent.setText(R.string.rankingPressForHelp);
             return;
         }
 
-        PokerHandSuitless inputHand = new PokerHandSuitless(userInput.getText().toString()); // Make hand from user input
+        String userHandString = userInput.getText().toString();
+
+        // Check for invalid input characters
+        Character[] validValueChars = {'2', '3', '4', '5', '6', '7', '8', '9', '0', 'J', 'Q', 'K', 'A'};
+        Character[] validSuitChars = {'C', 'D', 'H', 'S'};
+        ArrayList<Character> validSuitArray = new ArrayList<>(Arrays.asList(validSuitChars));
+        ArrayList<Character> validValueArray = new ArrayList<>(Arrays.asList(validValueChars));
+        if(!validValueArray.contains(userHandString.charAt(0)) || !validValueArray.contains(userHandString.charAt(2)) // Check values
+        || !validSuitArray.contains(userHandString.charAt(1)) || !validSuitArray.contains(userHandString.charAt(3))) { // Check suits
+            outputRank.setText(R.string.rankingInvalidHandInvalidChar);
+            outputWinPercent.setText(R.string.rankingPressForHelp);
+            return;
+        }
+        for(int i = 0; i < userHandString.length(); i+= 2) { // check values
+            if(!validValueArray.contains(userHandString.charAt(i))) {
+                outputRank.setText(R.string.rankingInvalidHand);
+                outputWinPercent.setText(R.string.rankingPressForHelp);
+                return;
+            }
+        }
+
+        PokerHandSuitless inputHand = new PokerHandSuitless(userHandString); // Make hand from user input
         int handRank = HandRankList.getRank(inputHand);
 
-        // Check if hand is possible
+        // Check for Repeated Cards
         if(handRank == -1) {
-            outputRank.setText(R.string.rankingInvalidHand);
+            outputRank.setText(R.string.rankingInvalidHandDuplicateCard);
             outputWinPercent.setText(R.string.rankingPressForHelp);
             return;
         }
