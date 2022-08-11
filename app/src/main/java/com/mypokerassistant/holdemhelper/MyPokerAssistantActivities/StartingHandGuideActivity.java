@@ -1,4 +1,4 @@
-package com.example.mypokerassistant.MyPokerAssistantActivities;
+package com.mypokerassistant.holdemhelper.MyPokerAssistantActivities;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
@@ -10,11 +10,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mypokerassistant.PokerParts.HandRankList;
-import com.example.mypokerassistant.PokerParts.PokerHandSuitless;
-import com.example.mypokerassistant.R;
+import com.mypokerassistant.holdemhelper.PokerParts.HandRankList;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerHandSuitless;
+import com.mypokerassistant.holdemhelper.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,7 +68,6 @@ public class StartingHandGuideActivity extends AppCompatActivity {
      * @param view the current view
      */
     public void getRankButtonPress(View view) {
-        // TODO: 8/8/2022 Do something with detailed output
         EditText userInput = findViewById(R.id.handGuideInputText);
         TextView outputRank = findViewById(R.id.handGuideRankText);
         TextView outputWinPercent = findViewById(R.id.handGuideWinPCTText);

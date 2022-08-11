@@ -1,4 +1,4 @@
-package com.example.mypokerassistant.PokerParts;
+package com.mypokerassistant.holdemhelper.PokerParts;
 
 /**
  * Class that represents a hand in poker with a boolean data field to see if the hand is suited

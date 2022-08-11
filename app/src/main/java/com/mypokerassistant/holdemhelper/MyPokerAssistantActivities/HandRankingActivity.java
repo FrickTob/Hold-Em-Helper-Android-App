@@ -1,10 +1,11 @@
-package com.example.mypokerassistant.MyPokerAssistantActivities;
+package com.mypokerassistant.holdemhelper.MyPokerAssistantActivities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mypokerassistant.R;
+import com.mypokerassistant.holdemhelper.R;
+
 
 /**
  * Activity visited by user on handRankingButton press.

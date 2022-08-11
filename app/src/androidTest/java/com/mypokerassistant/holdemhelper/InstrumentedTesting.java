@@ -1,4 +1,4 @@
-package com.example.mypokerassistant;
+package com.mypokerassistant.holdemhelper;
 
 import android.content.Context;
 

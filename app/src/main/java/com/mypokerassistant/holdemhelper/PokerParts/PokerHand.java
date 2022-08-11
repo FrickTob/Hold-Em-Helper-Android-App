@@ -1,4 +1,4 @@
-package com.example.mypokerassistant.PokerParts;
+package com.mypokerassistant.holdemhelper.PokerParts;
 
 import java.util.Random;
 

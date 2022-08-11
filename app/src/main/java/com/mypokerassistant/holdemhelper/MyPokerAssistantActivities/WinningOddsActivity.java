@@ -1,4 +1,4 @@
-package com.example.mypokerassistant.MyPokerAssistantActivities;
+package com.mypokerassistant.holdemhelper.MyPokerAssistantActivities;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
@@ -13,9 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mypokerassistant.PokerStats.PokerStats;
-import com.example.mypokerassistant.R;
-
+import com.mypokerassistant.holdemhelper.PokerStats.OddsCalculation;
+import com.mypokerassistant.holdemhelper.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
@@ -159,7 +158,7 @@ public class WinningOddsActivity extends AppCompatActivity {
          */
         @Override
         public void run() {
-            PokerStats stats = new PokerStats();
+            OddsCalculation stats = new OddsCalculation();
             final float odds = stats.getOdds(cardString) * 100;
 
             // Update UI components after calculating odds to display odds and remove progressBar

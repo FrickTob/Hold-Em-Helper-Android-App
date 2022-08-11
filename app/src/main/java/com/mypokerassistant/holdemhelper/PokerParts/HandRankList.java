@@ -1,8 +1,4 @@
-package com.example.mypokerassistant.PokerParts;
-
-import com.example.mypokerassistant.PokerParts.PokerCard;
-import com.example.mypokerassistant.PokerParts.PokerHand;
-import com.example.mypokerassistant.PokerParts.PokerHandSuitless;
+package com.mypokerassistant.holdemhelper.PokerParts;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
-package com.example.mypokerassistant;
+package com.mypokerassistant.holdemhelper;
 
-import com.example.mypokerassistant.PokerParts.PokerHandSuitless;
-import com.example.mypokerassistant.PokerParts.HandRankList;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerHandSuitless;
+import com.mypokerassistant.holdemhelper.PokerParts.HandRankList;
 
 import junit.framework.TestCase;
 

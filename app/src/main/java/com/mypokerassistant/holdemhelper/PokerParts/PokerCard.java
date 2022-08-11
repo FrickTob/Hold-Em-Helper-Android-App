@@ -1,4 +1,4 @@
-package com.example.mypokerassistant.PokerParts;
+package com.mypokerassistant.holdemhelper.PokerParts;
 
 /**
  * Represents a real poker card with a value and suit

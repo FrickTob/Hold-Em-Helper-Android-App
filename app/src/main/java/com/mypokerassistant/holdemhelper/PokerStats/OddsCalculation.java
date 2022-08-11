@@ -1,22 +1,19 @@
-package com.example.mypokerassistant.PokerStats;
+package com.mypokerassistant.holdemhelper.PokerStats;
 
 import androidx.annotation.NonNull;
 
-import com.example.mypokerassistant.PokerParts.AllCards;
-import com.example.mypokerassistant.PokerParts.PokerCard;
-import com.example.mypokerassistant.PokerParts.PokerHand;
-import com.example.mypokerassistant.PokerParts.PokerTable;
+import com.mypokerassistant.holdemhelper.PokerParts.AllCards;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerCard;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerHand;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerTable;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * Contains methods to calculate winning odds given a poker hand and at least three table cards
  * @author FrickTob
  */
-public class PokerStats {
+public class OddsCalculation {
 
 	//Formatting must be checked before function call
 	public float getOdds(@NonNull String cardString) {

@@ -1,22 +1,17 @@
-package com.example.mypokerassistant.MyPokerAssistantActivities;
+package com.mypokerassistant.holdemhelper.MyPokerAssistantActivities;
 
 import android.app.AlertDialog;
-import android.app.StatusBarManager;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import com.example.mypokerassistant.R;
+import com.mypokerassistant.holdemhelper.R;
 
 /**
  * User Starts on this activity

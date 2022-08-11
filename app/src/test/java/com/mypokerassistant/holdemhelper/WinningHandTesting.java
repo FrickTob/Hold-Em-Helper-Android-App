@@ -1,10 +1,10 @@
-package com.example.mypokerassistant;
+package com.mypokerassistant.holdemhelper;
 
-import com.example.mypokerassistant.PokerParts.PokerCard;
-import com.example.mypokerassistant.PokerParts.PokerHand;
-import com.example.mypokerassistant.PokerParts.PokerTable;
-import com.example.mypokerassistant.PokerStats.OneHandAnalysis;
-import com.example.mypokerassistant.PokerStats.CompareTwoHands;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerCard;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerHand;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerTable;
+import com.mypokerassistant.holdemhelper.PokerStats.OneHandAnalysis;
+import com.mypokerassistant.holdemhelper.PokerStats.CompareTwoHands;
 
 import junit.framework.TestCase;
 

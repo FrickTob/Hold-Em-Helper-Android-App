@@ -1,7 +1,7 @@
-package com.example.mypokerassistant.PokerStats;
+package com.mypokerassistant.holdemhelper.PokerStats;
 
-import com.example.mypokerassistant.PokerParts.PokerHand;
-import com.example.mypokerassistant.PokerParts.PokerTable;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerHand;
+import com.mypokerassistant.holdemhelper.PokerParts.PokerTable;
 
 import java.util.ArrayList;
 
@@ -112,9 +112,9 @@ public class CompareTwoHands {
 		char[] hand1Pairs = oneHandAnalysis1.isTwoPair();
 		char[] hand2Pairs = oneHandAnalysis2.isTwoPair();
 		if(hand1Pairs[1] == hand2Pairs[1]) { // if top pair is same, look at bottom pair
-			if(hand1Pairs[0] == hand2Pairs[0]) {
-				char hand1HighCard = twoPairHighCard(hand1Pairs, oneHandAnalysis1, oneHandAnalysis2);
-				char hand2HighCard = twoPairHighCard(hand2Pairs, oneHandAnalysis1, oneHandAnalysis2);
+			if(hand1Pairs[0] == hand2Pairs[0]) { // if bottom pair is same, look at high card
+				char hand1HighCard = twoPairHighCard(hand1Pairs, oneHandAnalysis1);
+				char hand2HighCard = twoPairHighCard(hand2Pairs, oneHandAnalysis2);
 				if(hand1HighCard == hand2HighCard)
 					return 0;
 				return hand1HighCard > hand2HighCard ? 1 : 2;
@@ -127,26 +127,20 @@ public class CompareTwoHands {
 	}
 	
 	//
-	private static char twoPairHighCard(char[] pairs, OneHandAnalysis oneHandAnalysis1, OneHandAnalysis oneHandAnalysis2) {
-		ArrayList<Character> values = oneHandAnalysis1.getValues();
-		int highPairIndex = values.indexOf(pairs[1]);
-		int lowPairIndex = values.indexOf(pairs[0]);
-		
-		if(highPairIndex == 5)
-			if(lowPairIndex == 3)
-				return values.get(2);
-			else
-				return values.get(4);
-		return values.get(6);
+	private static char twoPairHighCard(char[] pairs, OneHandAnalysis oneHandAnalysis) {
+		String[] cardArray = oneHandAnalysis.getCardArray();
+		for(int i = cardArray.length - 1; i >= 0; i--)
+			if(cardArray[i].length() == 1)  // highest single
+				return OneHandAnalysis.cardArrayIndexToValue(i);
+
+		return 'X'; // should never be reached
 	}
 	
 	public static int onePairTieBreaker(OneHandAnalysis oneHandAnalysis1, OneHandAnalysis oneHandAnalysis2) {
 		if(oneHandAnalysis1.isOnePair() == oneHandAnalysis2.isOnePair()) {
 			char pair = oneHandAnalysis1.isOnePair();
-			int pairInHand1Index = oneHandAnalysis1.getValues().indexOf(pair);
-			int pairInHand2Index = oneHandAnalysis1.getValues().indexOf(pair);
-				char[] top3Hand1 = onePairTop3(pairInHand1Index, oneHandAnalysis1);
-				char[] top3Hand2 = onePairTop3(pairInHand2Index, oneHandAnalysis2);
+				char[] top3Hand1 = onePairTop3(oneHandAnalysis1);
+				char[] top3Hand2 = onePairTop3(oneHandAnalysis2);
 				for(int i = 0; i < 3; i++) {
 					if(top3Hand1[i] != top3Hand2[i])
 						return top3Hand1[i] > top3Hand2[i] ? 1 : 2;
@@ -156,35 +150,38 @@ public class CompareTwoHands {
 		return oneHandAnalysis1.isOnePair() > oneHandAnalysis2.isOnePair() ? 1 : 2;
 	}
 	
-	private static char[] onePairTop3(int pairIndex, OneHandAnalysis hand) {
+	private static char[] onePairTop3(OneHandAnalysis hand) {
 		char[] top3 = new char[3];
-			if(pairIndex >= 0 && pairIndex <= 2) {
-				top3[0] = hand.getCards().get(6)[0];
-				top3[1] = hand.getCards().get(5)[0];
-				top3[2] = hand.getCards().get(4)[0];
+		int top3Index = 0;
+		String[] cardArray = hand.getCardArray();
+		for(int i = cardArray.length - 1; i >= 0; i--) {
+			if(cardArray[i].length() == 1) {
+				top3[top3Index] = OneHandAnalysis.cardArrayIndexToValue(i);
+				top3Index++;
 			}
-			if(pairIndex == 3) {
-				top3[0] = hand.getCards().get(6)[0];
-				top3[1] = hand.getCards().get(5)[0];
-				top3[2] = hand.getCards().get(2)[0];
-			}
-			if(pairIndex == 4) {
-				top3[0] = hand.getCards().get(6)[0];
-				top3[1] = hand.getCards().get(3)[0];
-				top3[2] = hand.getCards().get(2)[0];
-			}
-			if(pairIndex == 5) {
-				top3[0] = hand.getCards().get(4)[0];
-				top3[1] = hand.getCards().get(3)[0];
-				top3[2] = hand.getCards().get(2)[0];
-			}
+			if(top3Index == 3)
+				return top3;
+		}
 		return top3;
-			
 	}
 	
 	public static int highCardTieBreaker(OneHandAnalysis oneHandAnalysis1, OneHandAnalysis oneHandAnalysis2) {
-		char highCardHand1 = oneHandAnalysis1.getCards().get(6)[0];
-		char highCardHand2 = oneHandAnalysis2.getCards().get(6)[0];
+		String[] cardArray1 = oneHandAnalysis1.getCardArray();
+		String[] cardArray2 = oneHandAnalysis2.getCardArray();
+		char highCardHand1 = 'X';
+		char highCardHand2 = 'X';
+		for(int i = cardArray1.length - 1; i >= 0; i--) {
+			if(cardArray1[i].length() == 1) {
+				highCardHand1 = OneHandAnalysis.cardArrayIndexToValue(i);
+				break;
+			}
+		}
+		for(int i = cardArray2.length - 1; i >= 0; i--) {
+			if(cardArray2[i].length() == 1) {
+				highCardHand2 = OneHandAnalysis.cardArrayIndexToValue(i);
+				break;
+			}
+		}
 		if(highCardHand1 == highCardHand2)
 			return 0;
 		return highCardHand1 > highCardHand2 ? 1 : 2;
