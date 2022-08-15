@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mypokerassistant.holdemhelper.PokerStats.OddsCalculation;
 import com.mypokerassistant.holdemhelper.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
@@ -110,7 +111,7 @@ public class WinningOddsActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE); // start progress bar
         if(tableCardsText.length() == 6)
             loadingMessage.setText(R.string.oddsPleaseWaitMessageFlop);
-        else
+        else if(tableCardsText.length() == 8)
             loadingMessage.setText(R.string.oddsPleaseWaitMessage);
         outputMessage.setText(""); // clear invalid hand output if applicable
     }

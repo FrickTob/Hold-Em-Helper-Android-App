@@ -22,6 +22,8 @@
             android:ems="10"
             android:autofillHints="Poker String"
             android:hint="@string/rankingUserInputHint"
+
+            android:textColor="@color/black"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/infoButtonContent"
+            android:backgroundTint="@color/red_main"
+            android:background="@color/red_main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

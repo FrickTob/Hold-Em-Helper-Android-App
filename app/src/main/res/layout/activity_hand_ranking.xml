@@ -24,6 +24,7 @@
             android:text="@string/rankingTitle"
             android:textAlignment="textEnd"
             android:textSize="24sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +36,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/rankingRoyalFlush"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Title" />
@@ -63,6 +65,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingStraightFlush"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/royalFlushImage" />
@@ -91,6 +94,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingFourOfAKind"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/straightFlushImage" />
@@ -119,6 +123,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingFullHouse"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fourOfAKindImage" />
@@ -147,6 +152,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingFlush"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fullHouseImage" />
@@ -175,6 +181,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingStraight"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/flushImage" />
@@ -204,6 +211,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingThreeOfAKind"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/straightImage" />
@@ -233,6 +241,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingTwoPair"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/threeOfAKindImage" />
@@ -263,6 +272,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingOnePair"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/twoPairImage" />
@@ -292,6 +302,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/rankingHighCard"
             android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/onePairImage" />

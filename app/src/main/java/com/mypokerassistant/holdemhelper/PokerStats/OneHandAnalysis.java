@@ -6,10 +6,6 @@ import androidx.annotation.NonNull;
 
 import com.mypokerassistant.holdemhelper.PokerParts.PokerHand;
 import com.mypokerassistant.holdemhelper.PokerParts.PokerTable;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-
 /**
  * Contains methods to analyze a poker hand so that it may be compared to other hands
  * to determine which hand is stronger.
@@ -26,8 +22,6 @@ public class OneHandAnalysis {
 		handAndTable = "" + hand.getCard1().getCard() + hand.getCard2().getCard()
 				+ table.getFlop1().getCard() + table.getFlop2().getCard() + table.getFlop3().getCard()
 				+ table.getTurn().getCard() + table.getRiver().getCard();
-
-
 
 		cardArray = new String[13];
 		for(int i = 0; i < 13; i++) {
