@@ -19,3 +19,6 @@ Over the course of this project, I learned a ton about how android apps are made
 UI design, simplifying logic, background threading.
 
 I am a college student at Grinnell College and this is my first experience with app development. Hope you like it!
+
+Google Play Link:
+https://play.google.com/store/apps/details?id=com.holdemhelper
